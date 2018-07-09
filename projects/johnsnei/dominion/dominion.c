@@ -672,7 +672,7 @@ void adventurerCard(struct gameState *state, int currentPlayer, int temphand[], 
 	int cardDrawn; 			// Moved into function to simplify without a need for allocating memory
 	int drawntreasure = 0;	// Also moved into function to simplify allocation.
 
-	while(drawntreasure<2){
+	while(drawntreasure<3){ // ***INCREASED IT BY ONE TO CREATE AN ERROR****
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
@@ -704,7 +704,7 @@ void adventurerCard(struct gameState *state, int currentPlayer, int temphand[], 
 void smithyCard(struct gameState *state, int currentPlayer, int handPos) {
 	//+3 Cards
 	int i;
-	for (i = 0; i < 3; i++) {
+	for (i = 0; i < 4; i++) { // *** ERROR: MODIFIED SO IT ACTUALLY DRAWS 4 RATHER THAN 3 ***
 		drawCard(currentPlayer, state);
 	}
 
@@ -731,7 +731,7 @@ void villageCard(struct gameState *state, int currentPlayer, int handPos) {
 	drawCard(currentPlayer, state);
 
 	//+2 Actions
-	state->numActions = state->numActions + 2;
+	state->numActions = state->numActions + 3; // ** ERROR: MADE IT ADD 3 ACTIONS RATHER THAN 2 **
 
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
@@ -749,6 +749,8 @@ void villageCard(struct gameState *state, int currentPlayer, int handPos) {
 void greatHallCard(struct gameState *state, int currentPlayer, int handPos) {
 	//+1 Card
 	drawCard(currentPlayer, state);
+	drawCard(currentPlayer, state);  // ** ERROR: Drawing 2 cards rather than 1 **
+
 
 	//+1 Actions
 	state->numActions++;
@@ -769,7 +771,7 @@ void greatHallCard(struct gameState *state, int currentPlayer, int handPos) {
 void councilRoomCard(struct gameState *state, int currentPlayer, int handPos) {
 	int i;
 	//+4 Cards
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 3; i++) // ** ERROR: ONLY DRAWS 3 CARDS RATHER THAN 4 **
 	{
 		drawCard(currentPlayer, state);
 	}
