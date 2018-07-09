@@ -767,6 +767,7 @@ void greatHallCard(struct gameState *state, int currentPlayer, int handPos) {
  * 	- State
  * 	- currentPlayer
  * 	- handPos
+ *
  *********************************************/
 void councilRoomCard(struct gameState *state, int currentPlayer, int handPos) {
 	int i;
