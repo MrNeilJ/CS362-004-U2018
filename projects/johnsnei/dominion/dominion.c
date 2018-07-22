@@ -5,8 +5,6 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define DEBUG True
-
 int compare(const void* a, const void* b) {
 	if (*(int*)a > *(int*)b)
 		return 1;
