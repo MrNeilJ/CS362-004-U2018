@@ -52,7 +52,7 @@ int main (int argc, char** argv) {
 */
 	int numPlayers = 2;
 
-	initializeGame(2, k, 2, &testGame);
+	initializeGame(2, k, numPlayers, &testGame);
 
 	// TESTING TO SEE IF THE GAME CAN HANDLE A CHARACTER WITH 0 BUYS
 	testGame.numBuys = 0;
