@@ -59,7 +59,7 @@ int main (int argc, char** argv) {
 
 
 	// Play the Smithy Card
-	int cardPlay = cardEffect(0, 0, 0, 0, &testGame, 0, NULL);
+	int cardPlay = cardEffect(great_hall, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.\n");
