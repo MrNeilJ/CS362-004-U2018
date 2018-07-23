@@ -37,6 +37,9 @@ player: player.c interface.o
 unitTest1:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest1.c rngs.c -o unitTest1 -lm -g
 
+unitTest2:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest2.c rngs.c -o unitTest2 -lm -g
+
 all: playdom player 
 
 clean:

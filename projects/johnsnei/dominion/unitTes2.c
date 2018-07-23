@@ -47,36 +47,28 @@ int main (int argc, char** argv) {
 
 	int numPlayers = 2;
 
-	initializeGame(numPlayers, k, 10, &testGame);
+	int gameTest = initializeGame(numPlayers, k, 10, &testGame);
 
-	// TESTING TO SEE IF THE GAME CAN HANDLE A CHARACTER WITH 0 BUYS
-	testGame.numBuys = 0;
+	// Check to see if the game is still playing
+	int endedYet = isGameOver(&gameTest);
+	assert(endedYet == 0);
 
-	// MATCH HOW THE BUY CARD FUNCTION WORKS IN THE DOMINION FILE
-	player = buyCard(village, &testGame);
+	// Change a value to have the game end
+	gameTest->supplyCount[province] = 0;
+	endedYet = isGameOver(&gameTest);
+	assert(endedYet == 1);
 
-	// Did we receive any error since the user does not have any available buys
-	assert(player == -1);
+	// Reinitialize to check again
+	gameTest = initializeGame(numPlayers, k, 10, &testGame);
+	endedYet = isGameOver(&gameTest);
 
-	// Check to see if we can fail due to not enough money
-	testGame.coins = 0;
+	int i;
+	for (i = 0; i < 3; i++) {
+		testGame.supplyCount[i] = 0;
+	}
+	endedYet = isGameOver(&gameTest);
+	assert(endedYet == 1);
 
-	player = buyCard(village, &testGame);
-
-	assert(player == -1);
-
-	// Check to see if we can fail due to incorrect choices
-	player = buyCard(-1, &testGame);
-
-	assert(player == -1);
-
-	// Now just to make sure everything isn't broken
-	testGame.numBuys = 2;
-	testGame.coins = 15;
-
-	player = buyCard(village, &testGame);
-
-	assert (player == 0);
 
 	// If we made it this far than everything is working.
 	printf("Success");
