@@ -52,7 +52,7 @@ int main (int argc, char** argv) {
 
 	// Get the amount of cards in hand before playing the smithy card
 	int currCards = numHandCards(&testGame);
-	int currBuys = testGame.numBuys;
+	//int currBuys = testGame.numBuys;
 
 	//printf("Current Cards: %d\n", currCards);
 	//printf("Current Buys: %d\n", currBuys);
