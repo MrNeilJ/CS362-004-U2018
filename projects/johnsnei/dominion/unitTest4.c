@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 	assert(currentPlayer == whoseTurn(&testGame));
 
 	// End the turn and then test again.
-	endTurn(testGame);
+	endTurn(&testGame);
 	assert(currentPlayer != testGame.whoseTurn);
 
 
