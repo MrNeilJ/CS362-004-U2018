@@ -59,8 +59,8 @@ int main (int argc, char** argv) {
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.");
-		assert((currCards + 2) == numHandCards(&testGame));
-		printf("Total card amount was correct");
+		assert((currCards + 3) == numHandCards(&testGame));
+		printf("Total card amount was correct\n");
 
 		printf("Testing to ensure actions decreased.");
 		assert((currActions - 1 ) == testGame.numActions);
