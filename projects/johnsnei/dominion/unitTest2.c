@@ -50,27 +50,27 @@ int main (int argc, char** argv) {
 	initializeGame(numPlayers, k, 10, &testGame);
 
 	// Check to see if the game is still playing
-	//int endedYet = isGameOver(&gameTest);
-	assert(isGameOver(&gameTest) == 0);
+	//int endedYet = isGameOver(&testGame);
+	assert(isGameOver(&testGame) == 0);
 
 	// Change a value to have the game end
-	gameTest->supplyCount[province] = 0;
-	//endedYet = isGameOver(&gameTest);
+	testGame->supplyCount[province] = 0;
+	//endedYet = isGameOver(&testGame);
 	//assert(endedYet == 1);
-	assert(isGameOver(&gameTest) == 1);
+	assert(isGameOver(&testGame) == 1);
 
 
 	// Reinitialize to check again
-	gameTest = initializeGame(numPlayers, k, 10, &testGame);
-	//endedYet = isGameOver(&gameTest);
+	testGame = initializeGame(numPlayers, k, 10, &testGame);
+	//endedYet = isGameOver(&testGame);
 
 	int i;
 	for (i = 0; i < 3; i++) {
 		testGame.supplyCount[i] = 0;
 	}
-	//endedYet = isGameOver(&gameTest);
+	//endedYet = isGameOver(&testGame);
 	//assert(endedYet == 1);
-	assert(isGameOver(&gameTest) == 1);
+	assert(isGameOver(&testGame) == 1);
 
 
 
