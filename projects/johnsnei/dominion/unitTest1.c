@@ -32,7 +32,7 @@ int main (int argc, char** argv) {
 	struct gameState testGame;
 	int player;
 	int i;
-	int k[10];
+	//int k[10];
 	//for (i = 0; i < 10; i++) {
 	//	k[i] = i+1;
 	//}
