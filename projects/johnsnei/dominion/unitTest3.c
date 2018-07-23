@@ -23,7 +23,6 @@ int main (int argc, char** argv) {
 
 	// Initialize the basics of the game
 	struct gameState testGame;
-	int player;
 
 	int k[10] = {
 			adventurer,

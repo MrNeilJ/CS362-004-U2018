@@ -24,7 +24,6 @@ int main (int argc, char** argv) {
 
 	// Initialize the basics of the game
 	struct gameState testGame;
-	int player;
 
 	int k[10] = {
 			adventurer,
@@ -56,7 +55,7 @@ int main (int argc, char** argv) {
 	int currActions = testGame.numActions;
 
 	// Play the Smithy Card
-	int cardPlay = playCard(0, 0, 0, 0, &testGame);
+	int cardPlay = cardEffect(0, 0, 0, 0, &testGame, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.");
