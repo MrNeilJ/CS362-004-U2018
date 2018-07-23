@@ -44,7 +44,10 @@ unitTest3:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest3.c rngs.c -o unitTest3 -lm -g
 
 unitTest4:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest3.c rngs.c -o unitTest4 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest4.c rngs.c -o unitTest4 -lm -g
+
+cardTest1:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest1.c rngs.c -o cardTest1-lm -g
 
 all: playdom player 
 

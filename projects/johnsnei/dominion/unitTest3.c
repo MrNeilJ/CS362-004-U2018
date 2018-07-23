@@ -21,13 +21,6 @@
 
 int main (int argc, char** argv) {
 
-	/* NumBuys potential errors that could occur
-	 * Return -1 (Not enough buys available)
-	 * Return -1 (There are not any cards of that type left)
-	 * Return -1 (Player doesn't have enough money to buy that item)
-	 * Return 0  (Completed the function all the way to the end properly)
-	*/
-
 	// Initialize the basics of the game
 	struct gameState testGame;
 	int player;

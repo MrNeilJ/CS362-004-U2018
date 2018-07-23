@@ -43,31 +43,33 @@ int main (int argc, char** argv) {
 
 	initializeGame(numPlayers, k, 10, &testGame);
 
-	// Check to see if the game is still playing
-	//int endedYet = isGameOver(&testGame);
-	assert(isGameOver(&testGame) == 0);
 
-	// Change a value to have the game end
-	testGame.supplyCount[province] = 0;
-	//endedYet = isGameOver(&testGame);
-	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
+	// Set the game up so that the smithy card is in the 0 position
+	testGame.hand[0][0] = smithy;
 
+	// Prep it so that we an definitely play the card
+	testGame.numActions = 2;
+	testGame.phase = 0;
 
-	// Reinitialize to check again
-	initializeGame(numPlayers, k, 10, &testGame);
-	//endedYet = isGameOver(&testGame);
+	// Get the amount of cards in hand before playing the smithy card
+	int currCards = numHandCards(&testGame);
+	int currActions = testGame.numActions;
 
-	int i;
-	for (i = 0; i < 3; i++) {
-		testGame.supplyCount[i] = 0;
+	// Play the Smithy Card
+	int cardPlay = playCard(0, 0, 0, 0, &testGame);
+
+	if (cardPlay == 0) {
+		printf("Testing to ensure correct amount of cards.");
+		assert((currCards + 2) == numHandCards(&testGame));
+		printf("Total card amount was correct");
+
+		printf("Testing to ensure actions decreased.");
+		assert((currActions - 1 ) == testGame.numActions);
+		printf("Number of actions were correct");
 	}
-	//endedYet = isGameOver(&testGame);
-	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
 
 	// If we made it this far than everything is working.
-	printf("Success");
+	printf("Success, passed all tests");
 	return 0;
 
 
