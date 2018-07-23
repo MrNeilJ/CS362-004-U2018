@@ -47,7 +47,7 @@ int main (int argc, char** argv) {
 
 	int numPlayers = 2;
 
-	int gameTest = initializeGame(numPlayers, k, 10, &testGame);
+	initializeGame(numPlayers, k, 10, &testGame);
 
 	// Check to see if the game is still playing
 	//int endedYet = isGameOver(&gameTest);
