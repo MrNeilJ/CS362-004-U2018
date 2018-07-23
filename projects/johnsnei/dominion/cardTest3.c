@@ -54,8 +54,8 @@ int main (int argc, char** argv) {
 	int currCards = numHandCards(&testGame);
 	int currBuys = testGame.numBuys;
 
-	printf("Current Cards: %d", currCards);
-	printf("Current Buys: %d", currBuys);
+	printf("Current Cards: %d\n", currCards);
+	printf("Current Buys: %d\n", currBuys);
 
 
 
@@ -64,7 +64,7 @@ int main (int argc, char** argv) {
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.\n");
-		printf("Current Cards: %d", numHandCards(&testGame));
+		printf("Current Cards: %d\n", numHandCards(&testGame));
 
 		assert((currCards) == numHandCards(&testGame) + 3);
 		printf("Total card amount was correct\n");
