@@ -52,6 +52,9 @@ cardTest1:
 cardTest2:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest2.c rngs.c -o cardTest2 -lm -g
 
+cardTest3:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest3.c rngs.c -o cardTest3 -lm -g
+
 
 all: playdom player 
 
