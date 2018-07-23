@@ -59,14 +59,14 @@ cardTest4:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest4.c rngs.c -o cardTest4 -lm -g
 
 unitCardTest:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest1.c rngs.c -o unittest1 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest2.c rngs.c -o unittest2 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest3.c rngs.c -o unittest3 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unittest4.c rngs.c -o unittest4 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest1.c rngs.c -o cardtest1 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest2.c rngs.c -o cardtest2 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest3.c rngs.c -o cardtest3 -lm -g
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardtest4.c rngs.c -o cardtest4 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest1.c rngs.c -o unitTest1 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest2.c rngs.c -o unitTest2 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest3.c rngs.c -o unitTest3 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c unitTest4.c rngs.c -o unitTest4 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest1.c rngs.c -o cardTest1 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest2.c rngs.c -o cardTest2 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest3.c rngs.c -o cardTest3 -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c cardTest4.c rngs.c -o cardTest4 -lm -g
 
 unitTestOutput:
 	./unittest1 &> unittestresults.out
@@ -79,6 +79,7 @@ unitTestOutput:
 	./cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
+
 
 all: playdom player
 
