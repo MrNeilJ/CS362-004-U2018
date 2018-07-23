@@ -71,7 +71,7 @@ int main (int argc, char** argv) {
 		printf("Number Actions Now: %d", testGame.numActions);
 
 		printf("Testing to ensure correct number of actions\n");
-		assert(currActions == testGame.numActions + 2);
+		assert(currActions + 2 == testGame.numActions);
 		printf("Total number of actions correct\n");
 	}
 
