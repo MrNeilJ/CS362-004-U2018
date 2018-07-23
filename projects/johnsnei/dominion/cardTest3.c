@@ -66,7 +66,7 @@ int main (int argc, char** argv) {
 		printf("Testing to ensure correct amount of cards.\n");
 		printf("Current Cards: %d\n", numHandCards(&testGame));
 
-		assert((currCards) == numHandCards(&testGame) + 3);
+		assert((currCards + 2) == numHandCards(&testGame));
 		printf("Total card amount was correct\n");
 
 		printf("Number Actions Now: %d", testGame.numActions);
