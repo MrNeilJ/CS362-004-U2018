@@ -76,6 +76,7 @@ int main (int argc, char** argv) {
 	assert(player == -1);
 
 	// Now just to make sure everything isn't broken
+	testGame.numBuys = 10;
 	testGame.coins = 15;
 
 	player = buyCard(5, &testGame);
