@@ -47,6 +47,8 @@ int main (int argc, char** argv) {
 	//testGame.hand[0][0] = smithy;
 
 	// Prep it so that we an definitely play the card
+	testGame.hand[0][0] = village;
+
 	testGame.numActions = 2;
 	testGame.phase = 0;
 
@@ -59,7 +61,7 @@ int main (int argc, char** argv) {
 
 
 	// Play the Smithy Card
-	int cardPlay = cardEffect(village, 0, 0, 0, &testGame, 0, NULL);
+	int cardPlay = cardEffect(0, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.\n");
@@ -69,7 +71,7 @@ int main (int argc, char** argv) {
 		printf("Number Actions Now: %d", testGame.numActions);
 
 		printf("Testing to ensure correct number of actions\n");
-		assert(currActions == testGame.numActions + 1);
+		assert(currActions == testGame.numActions + 2);
 		printf("Total number of actions correct\n");
 	}
 
