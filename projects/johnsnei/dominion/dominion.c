@@ -720,7 +720,7 @@ void smithyCard(struct gameState *state, int currentPlayer, int handPos) {
 
 /**********************************************
  * VILLAGE CARD:
- * Description: +3 Cards, +2 Actions
+ * Description: +1 Cards, +2 Actions
  * Parameters:
  * 	- State
  * 	- currentPlayer
