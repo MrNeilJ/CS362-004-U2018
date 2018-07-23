@@ -34,7 +34,7 @@ int main (int argc, char** argv) {
 			mine,
 			cutpurse,
 			sea_hag,
-			tribute,
+			council_room,
 			smithy
 	};
 
@@ -44,7 +44,7 @@ int main (int argc, char** argv) {
 
 
 	// Set the game up so that the smithy card is in the 0 position
-	testGame.hand[0][0] = great_hall;
+	testGame.hand[0][0] = council_room;
 
 	// Prep it so that we an definitely play the card
 	testGame.numActions = 2;
@@ -59,7 +59,7 @@ int main (int argc, char** argv) {
 
 
 	// Play the Smithy Card
-	int cardPlay = cardEffect(great_hall, 0, 0, 0, &testGame, 0, NULL);
+	int cardPlay = cardEffect(council_room, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.\n");
