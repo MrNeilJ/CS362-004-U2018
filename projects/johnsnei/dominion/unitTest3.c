@@ -49,29 +49,15 @@ int main (int argc, char** argv) {
 
 	initializeGame(numPlayers, k, 10, &testGame);
 
-	// Check to see if the game is still playing
-	//int endedYet = isGameOver(&testGame);
-	assert(isGameOver(&testGame) == 0);
+	// Run through all the potential of the getCost() function
 
-	// Change a value to have the game end
-	testGame.supplyCount[province] = 0;
-	//endedYet = isGameOver(&testGame);
-	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
-
-
-	// Reinitialize to check again
-	initializeGame(numPlayers, k, 10, &testGame);
-	//endedYet = isGameOver(&testGame);
-
+	// Actual values of all of the cards
+	int currCard[11] = {6, 4, 2, 3, 5, 5, 4, 4, 5, 4, 6};
 	int i;
-	for (i = 0; i < 3; i++) {
-		testGame.supplyCount[i] = 0;
+	for (int i = 0; i < 10; i++) {
+		assert(getCost(k[i]) == currCard[i]);
 	}
-	//endedYet = isGameOver(&testGame);
-	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
-
+	
 	// If we made it this far than everything is working.
 	printf("Success");
 	return 0;
