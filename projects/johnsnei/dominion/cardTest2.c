@@ -54,15 +54,21 @@ int main (int argc, char** argv) {
 	int currCards = numHandCards(&testGame);
 	int currActions = testGame.numActions;
 
+	printf("Current Cards: %d", currCards);
+	printf("Current Actions: %d", currActions);
+
+
 	// Play the Smithy Card
 	int cardPlay = cardEffect(village, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
-		printf("Testing to ensure correct amount of cards.");
+		printf("Testing to ensure correct amount of cards.\n");
 		assert((currCards) == numHandCards(&testGame));
 		printf("Total card amount was correct\n");
 
-		printf("Testing to ensure correct number of actions");
+		printf("Number Actions Now: %d", testGame.numActions);
+
+		printf("Testing to ensure correct number of actions\n");
 		assert(currActions == testGame.numActions + 1);
 		printf("Total number of actions correct\n");
 	}
