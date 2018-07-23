@@ -54,14 +54,14 @@ int main (int argc, char** argv) {
 	assert(isGameOver(&testGame) == 0);
 
 	// Change a value to have the game end
-	testGame->supplyCount[province] = 0;
+	testGame.supplyCount[province] = 0;
 	//endedYet = isGameOver(&testGame);
 	//assert(endedYet == 1);
 	assert(isGameOver(&testGame) == 1);
 
 
 	// Reinitialize to check again
-	testGame = initializeGame(numPlayers, k, 10, &testGame);
+	initializeGame(numPlayers, k, 10, &testGame);
 	//endedYet = isGameOver(&testGame);
 
 	int i;
