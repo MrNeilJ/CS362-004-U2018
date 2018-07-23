@@ -44,7 +44,7 @@ int main (int argc, char** argv) {
 
 
 	// Set the game up so that the smithy card is in the 0 position
-	testGame.hand[0][0] = smithy;
+	//testGame.hand[0][0] = smithy;
 
 	// Prep it so that we an definitely play the card
 	testGame.numActions = 2;
@@ -55,7 +55,7 @@ int main (int argc, char** argv) {
 	int currActions = testGame.numActions;
 
 	// Play the Smithy Card
-	int cardPlay = cardEffect(0, 0, 0, 0, &testGame, NULL);
+	int cardPlay = cardEffect(smithy, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.");
