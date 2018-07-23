@@ -74,7 +74,7 @@ int main (int argc, char** argv) {
 	}
 
 	// If we made it this far than everything is working.
-	printf("Success, passed all tests");
+	printf("CARDTEST4 aPASSED");
 	return 0;
 
 

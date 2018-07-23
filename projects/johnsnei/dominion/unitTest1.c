@@ -79,7 +79,7 @@ int main (int argc, char** argv) {
 	assert (player == 0);
 
 	// If we made it this far than everything is working.
-	printf("Success");
+	printf("UNIT TEST 1 PASSED");
 	return 0;
 
 

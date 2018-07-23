@@ -66,7 +66,7 @@ int main (int argc, char** argv) {
 	assert(isGameOver(&testGame) == 1);
 
 	// If we made it this far than everything is working.
-	printf("Success");
+	printf("UNIT TEST 2 PASSED");
 	return 0;
 
 

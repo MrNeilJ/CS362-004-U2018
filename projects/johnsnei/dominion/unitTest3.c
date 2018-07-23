@@ -51,7 +51,7 @@ int main (int argc, char** argv) {
 	}
 	
 	// If we made it this far than everything is working.
-	printf("Success");
+	printf("UNIT TEST 3 PASSED");
 	return 0;
 
 

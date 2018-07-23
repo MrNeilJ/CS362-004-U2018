@@ -61,7 +61,7 @@ int main (int argc, char** argv) {
 
 	
 	// If we made it this far than everything is working.
-	printf("Success");
+	printf("UNIT TEST 4 PASSEED");
 	return 0;
 
 
