@@ -52,7 +52,6 @@ int main (int argc, char** argv) {
 
 	// Get the amount of cards in hand before playing the smithy card
 	int currCards = numHandCards(&testGame);
-	int currActions = testGame.numActions;
 
 	// Play the Smithy Card
 	int cardPlay = cardEffect(smithy, 0, 0, 0, &testGame, 0, NULL);
