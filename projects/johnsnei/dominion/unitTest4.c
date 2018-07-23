@@ -52,7 +52,7 @@ int main (int argc, char** argv) {
 
 	// Lets see if it starts with the correct player
 	int currentPlayer = 0;
-	assert(currentPlayer == testGame.whoseTurn());
+	assert(currentPlayer == whoseTurn(&testGame));
 
 	// End the turn and then test again.
 	endTurn(testGame);
