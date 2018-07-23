@@ -20,7 +20,7 @@
 #include <assert.h>
 
 int main (int argc, char** argv) {
-
+	printf("\nCARDTEST 1 TESTING:\n");
 
 	// Initialize the basics of the game
 	struct gameState testGame;
@@ -57,13 +57,19 @@ int main (int argc, char** argv) {
 	int cardPlay = cardEffect(smithy, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
-		printf("Testing to ensure correct amount of cards.");
-		assert((currCards + 2) == numHandCards(&testGame));
-		printf("Total card amount was correct\n");
+		//printf("Testing to ensure correct amount of cards.\n");
+		if ((currCards + 2) == numHandCards(&testGame)) {
+			printf("Correct: Smithy produces correct number of cards\n");
+		}
+		else {
+			printf("Incorrect: Smithy produces incorrect number of cards\n");
+		}
+		//assert((currCards + 2) == numHandCards(&testGame));
+		//printf("Total card amount was correct\n");
 	}
 
 	// If we made it this far than everything is working.
-	printf("CARDTEST1 PASSED");
+	//printf("CARDTEST1 PASSED\n");
 	return 0;
 
 

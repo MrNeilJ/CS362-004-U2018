@@ -20,7 +20,7 @@
 #include <assert.h>
 
 int main (int argc, char** argv) {
-
+	printf("\nCARDTEST 3 TESTING:\n");
 
 	// Initialize the basics of the game
 	struct gameState testGame;
@@ -54,8 +54,8 @@ int main (int argc, char** argv) {
 	int currCards = numHandCards(&testGame);
 	int currBuys = testGame.numBuys;
 
-	printf("Current Cards: %d\n", currCards);
-	printf("Current Buys: %d\n", currBuys);
+	//printf("Current Cards: %d\n", currCards);
+	//printf("Current Buys: %d\n", currBuys);
 
 
 
@@ -63,21 +63,33 @@ int main (int argc, char** argv) {
 	int cardPlay = cardEffect(council_room, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
-		printf("Testing to ensure correct amount of cards.\n");
-		printf("Current Cards: %d\n", numHandCards(&testGame));
+		//printf("Testing to ensure correct amount of cards.\n");
+		//printf("Current Cards: %d\n", numHandCards(&testGame));
 
-		assert((currCards + 3) == numHandCards(&testGame));
-		printf("Total card amount was correct\n");
+		//assert((currCards + 3) == numHandCards(&testGame));
+		if ((currCards + 3) == numHandCards(&testGame)) {
+			printf("Correct: Council Room Produces the correct number of cards\n");
+		}
+		else {
+			printf("Incorrect: Council Room produces incorrect number of cards\n");
+		}
+		//printf("Total card amount was correct\n");
 
-		printf("Number Actions Now: %d", testGame.numActions);
+		//printf("Number Actions Now: %d\n", testGame.numActions);
 
-		printf("Testing to ensure correct number of buys\n");
-		assert(currBuys + 1 == testGame.numBuys);
-		printf("Total number of buys correct\n");
+		//printf("Testing to ensure correct number of buys\n");
+		//assert(currBuys + 1 == testGame.numBuys);
+		if (currBuys + 1 == testGame.numBuys) {
+			printf("Correct: Council Room Produces the correct number of buys\n");
+		}
+		else {
+			printf("Incorrect: Council Room produces incorrect number of buys\n");
+		}
+		//printf("Total number of buys correct\n");
 	}
 
 	// If we made it this far than everything is working.
-	printf("CARDTEST3PASSED");
+	//printf("CARDTEST3 PASSED\n");
 	return 0;
 
 

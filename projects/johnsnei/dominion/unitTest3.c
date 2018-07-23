@@ -20,7 +20,7 @@
 #include <assert.h>
 
 int main (int argc, char** argv) {
-
+	printf("\nUNIT 3 TESTING:\n");
 	// Initialize the basics of the game
 	struct gameState testGame;
 
@@ -47,11 +47,17 @@ int main (int argc, char** argv) {
 	int currCard[11] = {6, 4, 2, 3, 5, 5, 4, 4, 5, 4, 6};
 	int i;
 	for (i = 0; i < 10; i++) {
-		assert(getCost(k[i]) == currCard[i]);
+		//assert(getCost(k[i]) == currCard[i]);
+		if (getCost(k[i]) == currCard[i]) {
+			printf("Correct: Cost of card matches\n");
+		}
+		else {
+			printf("Incorrect: Cost of cards do not match\n");
+		}
 	}
 	
 	// If we made it this far than everything is working.
-	printf("UNIT TEST 3 PASSED");
+	//printf("UNIT TEST 3 PASSED\n");
 	return 0;
 
 

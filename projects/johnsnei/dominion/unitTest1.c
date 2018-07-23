@@ -21,6 +21,8 @@
 
 int main (int argc, char** argv) {
 
+	printf("UNIT 1 TESTING:\n");
+
 	/* NumBuys potential errors that could occur
 	 * Return -1 (Not enough buys available)
 	 * Return -1 (There are not any cards of that type left)
@@ -56,19 +58,34 @@ int main (int argc, char** argv) {
 	player = buyCard(village, &testGame);
 
 	// Did we receive any error since the user does not have any available buys
-	assert(player == -1);
+	if (player == -1) {
+		printf("Correct: Error received when user has 0 buys\n");
+	}
+	// assert(player == -1);
 
 	// Check to see if we can fail due to not enough money
 	testGame.coins = 0;
 
 	player = buyCard(village, &testGame);
+	if (player == -1) {
+		printf("Correct: Error received when user has 0 buys\n");
+	}
+	else {
+		printf("Incorrect: Did not receive -1 when out of money\n");
+	}
 
-	assert(player == -1);
+	//assert(player == -1);
 
 	// Check to see if we can fail due to incorrect choices
 	player = buyCard(-1, &testGame);
 
-	assert(player == -1);
+	//assert(player == -1);
+	if (player == -1) {
+		printf("Correct: Error received with incorrect choices are made\n");
+	}
+	else {
+		printf("Incorrect: Did not receive an error when making a wrong choice\n");
+	}
 
 	// Now just to make sure everything isn't broken
 	testGame.numBuys = 2;
@@ -76,10 +93,17 @@ int main (int argc, char** argv) {
 
 	player = buyCard(village, &testGame);
 
-	assert (player == 0);
+	if (player == 0) {
+		printf("Correct: Passes when it is supposed to pass\n");
+	}
+	else {
+		printf("Incorrect: Received an error with passing results\n");
+	}
+
+	//assert (player == 0);
 
 	// If we made it this far than everything is working.
-	printf("UNIT TEST 1 PASSED");
+	//printf("UNIT TEST 1 PASSED\n\n");
 	return 0;
 
 

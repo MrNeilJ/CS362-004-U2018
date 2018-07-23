@@ -21,6 +21,7 @@
 
 int main (int argc, char** argv) {
 
+	printf("\nUNIT 4 TESTING:\n");
 	/* NumBuys potential errors that could occur
 	 * Return -1 (Not enough buys available)
 	 * Return -1 (There are not any cards of that type left)
@@ -52,16 +53,27 @@ int main (int argc, char** argv) {
 
 	// Lets see if it starts with the correct player
 	int currentPlayer = 0;
-	assert(currentPlayer == whoseTurn(&testGame));
+	//assert(currentPlayer == whoseTurn(&testGame));
+	if (currentPlayer == whoseTurn(&testGame)) {
+		printf("Correct: Player matches correct turn\n");
+	}
+	else {
+		printf("Incorrect: Player and current player do not match\n");
+	}
 
 	// End the turn and then test again.
 	endTurn(&testGame);
-	assert(currentPlayer != testGame.whoseTurn);
-
+	//assert(currentPlayer != testGame.whoseTurn);
+	if (currentPlayer != whoseTurn(&testGame)) {
+		printf("Correct: Players have now switched\n");
+	}
+	else {
+		printf("Incorrect: Player and current player still match\n");
+	}
 
 	
 	// If we made it this far than everything is working.
-	printf("UNIT TEST 4 PASSEED");
+	//printf("UNIT TEST 4 PASSEED\n");
 	return 0;
 
 

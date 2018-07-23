@@ -20,7 +20,7 @@
 #include <assert.h>
 
 int main (int argc, char** argv) {
-
+	printf("\nCARDTEST 4 TESTING:\n");
 
 	// Initialize the basics of the game
 	struct gameState testGame;
@@ -54,8 +54,8 @@ int main (int argc, char** argv) {
 	int currCards = numHandCards(&testGame);
 	int currBuys = testGame.numBuys;
 
-	printf("Current Cards: %d\n", currCards);
-	printf("Current Buys: %d\n", currBuys);
+	//printf("Current Cards: %d\n", currCards);
+	//printf("Current Buys: %d\n", currBuys);
 
 
 
@@ -63,18 +63,24 @@ int main (int argc, char** argv) {
 	int cardPlay = cardEffect(adventurer, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
-		printf("Testing to ensure correct amount of cards.\n");
-		printf("Current Cards: %d\n", numHandCards(&testGame));
+		//printf("Testing to ensure correct amount of cards.\n");
+		//printf("Current Cards: %d\n", numHandCards(&testGame));
 
-		assert((currCards + 2) == numHandCards(&testGame));
-		printf("Total card amount was correct\n");
+		//assert((currCards + 2) == numHandCards(&testGame));
+		if ((currCards + 2) == numHandCards(&testGame)) {
+			printf("Correct: Council Room Produces the correct number of cards\n");
+		}
+		else {
+			printf("Incorrect: Council Room produces incorrect number of cards\n");
+		}
+		//printf("Total card amount was correct\n");
 
 
 
 	}
 
 	// If we made it this far than everything is working.
-	printf("CARDTEST4 aPASSED");
+	//printf("CARDTEST4 PASSED\n");
 	return 0;
 
 

@@ -20,7 +20,7 @@
 #include <assert.h>
 
 int main (int argc, char** argv) {
-
+	printf("\nUNIT 2 TESTING:\n");
 
 	// Initialize the basics of the game
 	struct gameState testGame;
@@ -45,12 +45,25 @@ int main (int argc, char** argv) {
 	// Check to see if the game is still playing
 	//int endedYet = isGameOver(&testGame);
 	assert(isGameOver(&testGame) == 0);
+	if (isGameOver(&testGame) == 0) {
+		printf("Correct: Game is still playing\n");
+	}
+	else {
+		printf("Incorrect: Game Ended\n");
+	}
 
 	// Change a value to have the game end
 	testGame.supplyCount[province] = 0;
 	//endedYet = isGameOver(&testGame);
 	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
+	//assert(isGameOver(&testGame) == 1);
+	if (isGameOver(&testGame) == 1) {
+		printf("Correct: Game ended properly\n");
+	}
+	else {
+		printf("Incorrect: Game Still Running\n");
+	}
+
 
 
 	// Reinitialize to check again
@@ -63,10 +76,16 @@ int main (int argc, char** argv) {
 	}
 	//endedYet = isGameOver(&testGame);
 	//assert(endedYet == 1);
-	assert(isGameOver(&testGame) == 1);
+	//assert(isGameOver(&testGame) == 1);
+	if (isGameOver(&testGame) == 1) {
+		printf("Correct: Game ended when supply counts hit 0\n");
+	}
+	else {
+		printf("Incorrect: Game did not end when supply counts hit 0\n");
+	}
 
 	// If we made it this far than everything is working.
-	printf("UNIT TEST 2 PASSED");
+	//printf("UNIT TEST 2 PASSED\n\n");
 	return 0;
 
 
