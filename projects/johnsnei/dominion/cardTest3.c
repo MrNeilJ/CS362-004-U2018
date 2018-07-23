@@ -58,11 +58,14 @@ int main (int argc, char** argv) {
 	printf("Current Buys: %d", currBuys);
 
 
+
 	// Play the Smithy Card
 	int cardPlay = cardEffect(council_room, 0, 0, 0, &testGame, 0, NULL);
 
 	if (cardPlay == 0) {
 		printf("Testing to ensure correct amount of cards.\n");
+		printf("Current Cards: %d", numHandCards(&testGame));
+
 		assert((currCards) == numHandCards(&testGame) + 3);
 		printf("Total card amount was correct\n");
 
