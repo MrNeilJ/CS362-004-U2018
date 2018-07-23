@@ -33,11 +33,11 @@ int main (int argc, char** argv) {
 	int player;
 	int i;
 	int k[10];
-	for (i = 0; i < 10; i++) {
-		k[i] = i+1;
-	}
+	//for (i = 0; i < 10; i++) {
+	//	k[i] = i+1;
+	//}
 
-	/*int k[10] = {
+	int k[10] = {
 			adventurer,
 			gardens,
 			embargo,
@@ -49,7 +49,7 @@ int main (int argc, char** argv) {
 			tribute,
 			smithy
 	};
-*/
+
 	int numPlayers = 2;
 
 	initializeGame(2, k, numPlayers, &testGame);
@@ -58,7 +58,7 @@ int main (int argc, char** argv) {
 	testGame.numBuys = 0;
 
 	// MATCH HOW THE BUY CARD FUNCTION WORKS IN THE DOMINION FILE
-	player = buyCard(5, &testGame);
+	player = buyCard(village, &testGame);
 
 	// Did we receive any error since the user does not have any available buys
 	assert(player == -1);
@@ -66,7 +66,7 @@ int main (int argc, char** argv) {
 	// Check to see if we can fail due to not enough money
 	testGame.coins = 0;
 
-	player = buyCard(5, &testGame);
+	player = buyCard(village, &testGame);
 
 	assert(player == -1);
 
@@ -76,10 +76,10 @@ int main (int argc, char** argv) {
 	assert(player == -1);
 
 	// Now just to make sure everything isn't broken
-	testGame.numBuys = 10;
+	testGame.numBuys = 2;
 	testGame.coins = 15;
 
-	player = buyCard(5, &testGame);
+	player = buyCard(village, &testGame);
 
 	assert (player == 0);
 
