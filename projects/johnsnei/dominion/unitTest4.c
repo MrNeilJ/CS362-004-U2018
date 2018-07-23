@@ -49,14 +49,17 @@ int main (int argc, char** argv) {
 
 	initializeGame(numPlayers, k, 10, &testGame);
 
-	// Run through all the potential of the getCost() function
+	// Run through all the potential of the whoseTurn() function options
 
-	// Actual values of all of the cards
-	int currCard[11] = {6, 4, 2, 3, 5, 5, 4, 4, 5, 4, 6};
-	int i;
-	for (i = 0; i < 10; i++) {
-		assert(getCost(k[i]) == currCard[i]);
-	}
+	// Lets see if it starts with the correct player
+	int currentPlayer = 0;
+	assert(currentPlayer == testGame.whoseTurn());
+
+	// End the turn and then test again.
+	endTurn(testGame);
+	assert(currentPlayer != testGame.whoseTurn);
+
+
 	
 	// If we made it this far than everything is working.
 	printf("Success");
