@@ -6,6 +6,8 @@
 #include <assert.h>
 #include <time.h>
 #include <string.h>
+#include <dominion_helpers.h>
+
 #define NUM_TESTS 100
 
 // This randomly tests Adventurer
