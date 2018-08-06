@@ -15,7 +15,7 @@ int adventureCardTest(struct gameState *pre, struct gameState *post, int player,
 	// Check to see if we have gained at least two treasure cards
 	int preDrawnTreasures 	= 0;
 	int postDrawnTreasures 	= 0;
-	int preHandCount = pre.handCount[player];
+	int preHandCount = pre->handCount[player];
 	int postHandCount = post->handCount[player];
 
 	int n;
