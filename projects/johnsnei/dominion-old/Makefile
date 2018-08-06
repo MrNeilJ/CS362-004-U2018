@@ -105,27 +105,6 @@ unittestresults:
 randAdventurerTest:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurer.c rngs.c -o randomTestAdventurer -lm -g
 
-randomtestcard1: randomtestcard1.c dominion.c rngs.c
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestcard1.c rngs.c -o randomtestcard1 -lm -g
-	./randomtestcard1 > randomtestcard1.out
-	gcov randomtestcard1.c >> randomtestcard1.out
-	gcov dominion.c >> randomtestcard1.out
-	cat dominion.c.gcov >> randomtestcard1.out
-
-randomtestcard2: randomtestcard2.c dominion.c rngs.c
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestcard2.c rngs.c -o randomtestcard2 -lm -g
-	./randomtestcard2 > randomtestcard2.out
-	gcov randomtestcard2.c >> randomtestcard2.out
-	gcov dominion.c >> randomtestcard2.out
-	cat dominion.c.gcov >> randomtestcard2.out
-
-randomtestadventurer: randomtestadventurer.c dominion.c rngs.c
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurer.c rngs.c -o randomTestAdventurer -lm -g
-	./randomtestadventurer > randomtestadventurer.out
-	gcov randomtestadventurer.c >> randomtestadventurer.out
-	gcov dominion.c >> randomtestadventurer.out
-	cat dominion.c.gcov >> randomtestadventurer.out
-
 all: playdom player
 
 clean:

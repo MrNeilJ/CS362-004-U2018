@@ -11,7 +11,7 @@
 #define NUM_TESTS 100
 
 // This randomly tests Adventurer
-int adventureCardTest(struct gameState *pre, struct gameState *post, int player) {
+int adventureCardTest(struct gameState *pre, struct gameState *post, int player, int prevHandCount, int prevDeckCount) {
 	// Check to see if we have gained at least two treasure cards
 	int preDrawnTreasures 	= 0;
 	int postDrawnTreasures 	= 0;
@@ -26,7 +26,7 @@ int adventureCardTest(struct gameState *pre, struct gameState *post, int player)
 		}
 	}
 
-	for(n = 0; n < post->handCount[player]; n++){
+	for(n = 0; n < pre->handCount[player]; n++){
 		if(post->hand[player][n] == copper || post->hand[player][n] == silver || post->hand[player][n] == gold){
 			postDrawnTreasures++;
 		}
@@ -47,10 +47,12 @@ int main() {
 				 sea_hag, tribute, smithy};
 	int numPlayers;
 	int player;
+	int handCount;
+	int deckCount;
 	int seed;
 	int handPos;
 	int coinBonus;
-	int result = 0;
+	int result;
 
 	// Game setup
 	struct gameState pre;
@@ -60,7 +62,7 @@ int main() {
 
 	printf("--------------------------------------------------------------------------------\n");
 	printf("RANDOM ADVENTURER TEST:\n");
-	printf("Testing to validate we get the correct number of cards after playing\n");
+	printf("Testing to validate we get the correct number of cards after playing");
 
 	for (int i = 0; i < NUM_TESTS; i++) {
 
@@ -77,24 +79,27 @@ int main() {
 		initializeGame(numPlayers, k, seed, &post); //initialize Gamestate
 
 		// Initiate valid post variables
-		post.whoseTurn = player;
 		post.deckCount[player] = rand() % MAX_DECK;   //Pick random deck size out of MAX DECK size
 		post.discardCount[player] = rand() % MAX_DECK;
 		post.handCount[player] = rand() % MAX_HAND;
 
+		// Copy post variables
+		handCount = post.handCount[player];
+		deckCount = post.deckCount[player];
 
 		// Copy all of the settings so we can see what occurs after the card is played
 		pre = post;
 
 		int cardPlay = cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
 		if (cardPlay == -1) {
-
+			result += 1;
 		}
 
 		// Check to see if we failed our test
-		result += smithyCardTest(&pre, &post, player);
+		result += adventureCardTest(&pre, &post, player, handCount, deckCount);
 
 	}
+	printf("Tests Complete\n");
 	if (result >= 1) {
 		printf("Adventurer failed %d times, check your code and try again\n", result);
 	}
