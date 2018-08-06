@@ -105,26 +105,26 @@ unittestresults:
 randAdventurerTest:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurer.c rngs.c -o randomTestAdventurer -lm -g
 
-randomtestcard1: randomtestcard1.c dominion.c rngs.c
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestcard1.c rngs.c -o randomtestcard1 -lm -g
-	./randomtestcard1 > randomtestcard1.out
-	gcov randomtestcard1.c >> randomtestcard1.out
-	gcov dominion.c >> randomtestcard1.out
-	cat dominion.c.gcov >> randomtestcard1.out
+randomTestCard1: randomTestCard1.c dominion.c rngs.c
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestCard1.c rngs.c -o randomTestCard1 -lm -g
+	./randomTestCard1 > randomTestCard1.out
+	gcov randomTestCard1.c >> randomTestCard1.out
+	gcov dominion.c >> randomTestCard1.out
+	cat dominion.c.gcov >> randomTestCard1.out
 
-randomtestcard2: randomtestcard2.c dominion.c rngs.c
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestcard2.c rngs.c -o randomtestcard2 -lm -g
-	./randomtestcard2 > randomtestcard2.out
-	gcov randomtestcard2.c >> randomtestcard2.out
-	gcov dominion.c >> randomtestcard2.out
-	cat dominion.c.gcov >> randomtestcard2.out
+randomTestCard2: randomTestCard2.c dominion.c rngs.c
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestCard2.c rngs.c -o randomTestCard2 -lm -g
+	./randomTestCard2 > randomTestCard2.out
+	gcov randomTestCard2.c >> randomTestCard2.out
+	gcov dominion.c >> randomTestCard2.out
+	cat dominion.c.gcov >> randomTestCard2.out
 
-randomtestadventurer: randomtestadventurer.c dominion.c rngs.c
+randomTestAdventurer: randomTestAdventurer.c dominion.c rngs.c
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurer.c rngs.c -o randomTestAdventurer -lm -g
-	./randomtestadventurer > randomtestadventurer.out
-	gcov randomtestadventurer.c >> randomtestadventurer.out
-	gcov dominion.c >> randomtestadventurer.out
-	cat dominion.c.gcov >> randomtestadventurer.out
+	./randomTestAdventurer > randomTestAdventurer.out
+	gcov randomTestAdventurer.c >> randomTestAdventurer.out
+	gcov dominion.c >> randomTestAdventurer.out
+	cat dominion.c.gcov >> randomTestAdventurer.out
 
 all: playdom player
 
