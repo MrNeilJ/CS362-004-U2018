@@ -13,18 +13,18 @@ int adventureCardTest(struct gameState *pre, struct gameState *post, int player,
 	// Check to see if we have gained at least two treasure cards
 	int preDrawnTreasures 	= 0;
 	int postDrawnTreasures 	= 0;
-	int preHandCount = pre->handCount;
-	int postHandCount = post->handCount;
+	int preHandCount = pre->handCount[player];
+	int postHandCount = post->handCount[player];
 
 	int n;
 
-	for(n = 0; n < pre->handCount; n++){
+	for(n = 0; n < pre->handCount[player]; n++){
 		if(pre->hand[player][n] == copper || pre->hand[player][n] == silver || pre->hand[player][n] == gold){
 			preDrawnTreasures++;
 		}
 	}
 
-	for(n = 0; n < pre->handCount; n++){
+	for(n = 0; n < pre->handCount[player]; n++){
 		if(post->hand[player][n] == copper || post->hand[player][n] == silver || post->hand[player][n] == gold){
 			postDrawnTreasures++;
 		}
@@ -59,7 +59,7 @@ int main() {
 
 	printf("--------------------------------------------------------------------------------");
 	printf("RANDOM ADVENTURER TEST:\n");
-	Printf("Testing to validate we get the correct number of cards after playing");
+	printf("Testing to validate we get the correct number of cards after playing");
 
 	for (int i = 0; i < NUM_TESTS; i++) {
 
