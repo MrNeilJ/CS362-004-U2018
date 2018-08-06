@@ -92,7 +92,7 @@ int main() {
 		}
 
 		// Check to see if we failed our test
-		result += smithyCardTest(&pre, &post, player);
+		result += adventureCardTest(&pre, &post, player);
 
 	}
 	if (result >= 1) {
