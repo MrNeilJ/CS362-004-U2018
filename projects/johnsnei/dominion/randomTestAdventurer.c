@@ -53,6 +53,7 @@ int main() {
 	int result;
 
 	// Game setup
+	struct gameState pre;
 	struct gameState post;
 
 	srand(time(NULL));
@@ -85,7 +86,7 @@ int main() {
 		deckCount = post.deckCount[player];
 
 		// Copy all of the settings so we can see what occurs after the card is played
-		memcpy(&post, pre, sizeof(struct gameState));
+		memcpy(&post, pre, sizeof(post));
 
 		int cardPlay = cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
 
