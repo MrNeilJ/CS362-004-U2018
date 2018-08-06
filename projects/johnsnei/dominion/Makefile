@@ -101,6 +101,9 @@ unittestresults:
 	cat dominion.c.gcov >> unittestresults.out
 
 
+randAdventurerTest:
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestadventurer.c rngs.c -o randomtestadventurer -lm -g
+
 all: playdom player
 
 clean:
