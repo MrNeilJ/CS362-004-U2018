@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <time.h>
-
+#include <string.h>
 #define NUM_TESTS 100
 
 // This randomly tests Adventurer
@@ -30,7 +30,7 @@ int adventureCardTest(struct gameState *pre, struct gameState *post, int player,
 		}
 	}
 
-	if (preDrawnTreasures + 2 == postDrawnTreasures) {
+	if ((preDrawnTreasures + 2 == postDrawnTreasures) && (preHandCount < postHandCount)) {
 		return 0;
 	}
 	else {
@@ -50,6 +50,7 @@ int main() {
 	int seed;
 	int handPos;
 	int coinBonus;
+	int result;
 
 	// Game setup
 	struct gameState pre;
@@ -85,12 +86,12 @@ int main() {
 		deckCount = post.deckCount[player];
 
 		// Copy all of the settings so we can see what occurs after the card is played
-		memcpy(&post, pre ,sizeof(struct gameState));
+		memcpy(&post, pre, sizeof(struct gameState));
 
 		cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
 
 		// Check to see if we failed our test
-		int result = validateStateAfterAdventurerDraw(&post, player, handCount, deckCount);
+		result += adventureCardTest(&post, player, handCount, deckCount);
 
 	}
 	printf("Tests Complete\n");
