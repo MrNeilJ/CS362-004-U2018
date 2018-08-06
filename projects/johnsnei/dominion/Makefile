@@ -102,7 +102,7 @@ unittestresults:
 
 
 randAdventurerTest:
-	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomtestadventurer.c rngs.c -o randomtestadventurer -lm -g
+	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurere.c rngs.c -o randomTestAdventurer-lm -g
 
 all: playdom player
 
