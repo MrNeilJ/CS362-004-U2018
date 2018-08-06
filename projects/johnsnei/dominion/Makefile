@@ -101,6 +101,7 @@ unittestresults:
 	cat dominion.c.gcov >> unittestresults.out
 
 
+
 randAdventurerTest:
 	gcc -fprofile-arcs -ftest-coverage -Wall -std=c99 dominion.c randomTestAdventurer.c rngs.c -o randomTestAdventurer-lm -g
 
