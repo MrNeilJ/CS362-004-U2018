@@ -60,7 +60,7 @@ int main() {
 
 	srand(time(NULL));
 
-	printf("--------------------------------------------------------------------------------");
+	printf("--------------------------------------------------------------------------------\n");
 	printf("RANDOM ADVENTURER TEST:\n");
 	printf("Testing to validate we get the correct number of cards after playing");
 
