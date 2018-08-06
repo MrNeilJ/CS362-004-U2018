@@ -53,7 +53,6 @@ int main() {
 	int result;
 
 	// Game setup
-	struct gameState pre;
 	struct gameState post;
 
 	srand(time(NULL));
