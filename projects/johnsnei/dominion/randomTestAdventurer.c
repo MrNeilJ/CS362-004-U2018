@@ -16,18 +16,18 @@ int adventureCardTest(struct gameState *pre, struct gameState *post, int player,
 	int preDrawnTreasures 	= 0;
 	int postDrawnTreasures 	= 0;
 	int preHandCount = pre.handCount[player];
-	int postHandCount = post.handCount[player];
+	int postHandCount = post->handCount[player];
 
 	int n;
 
-	for(n = 0; n < pre.handCount[player]; n++){
-		if(pre.hand[player][n] == copper || pre.hand[player][n] == silver || pre.hand[player][n] == gold){
+	for(n = 0; n < pre->handCount[player]; n++){
+		if(pre->hand[player][n] == copper || pre->hand[player][n] == silver || pre->hand[player][n] == gold){
 			preDrawnTreasures++;
 		}
 	}
 
-	for(n = 0; n < pre.handCount[player]; n++){
-		if(post.hand[player][n] == copper || post.hand[player][n] == silver || post.hand[player][n] == gold){
+	for(n = 0; n < pre->handCount[player]; n++){
+		if(post->hand[player][n] == copper || post->hand[player][n] == silver || post->hand[player][n] == gold){
 			postDrawnTreasures++;
 		}
 	}
