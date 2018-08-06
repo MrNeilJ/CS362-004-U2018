@@ -88,10 +88,10 @@ int main() {
 		// Copy all of the settings so we can see what occurs after the card is played
 		memcpy(&post, pre, sizeof(struct gameState));
 
-		cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
+		int cardPlay = cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
 
 		// Check to see if we failed our test
-		result += adventureCardTest(&post, player, handCount, deckCount);
+		result += adventureCardTest(&pre, &post, player, handCount, deckCount);
 
 	}
 	printf("Tests Complete\n");
