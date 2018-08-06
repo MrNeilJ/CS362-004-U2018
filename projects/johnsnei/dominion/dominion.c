@@ -672,7 +672,7 @@ void adventurerCard(struct gameState *state, int currentPlayer, int temphand[], 
 	int cardDrawn; 			// Moved into function to simplify without a need for allocating memory
 	int drawntreasure = 0;	// Also moved into function to simplify allocation.
 
-	while(drawntreasure<3){ // ***INCREASED IT BY ONE TO CREATE AN ERROR****
+	while(drawntreasure<2){ // ***INCREASED IT BY ONE TO CREATE AN ERROR****
 		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
