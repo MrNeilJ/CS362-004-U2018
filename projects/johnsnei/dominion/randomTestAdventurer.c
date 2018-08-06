@@ -86,9 +86,12 @@ int main() {
 		deckCount = post.deckCount[player];
 
 		// Copy all of the settings so we can see what occurs after the card is played
-		memcpy(&post, pre, sizeof(post));
+		pre = post;
 
 		int cardPlay = cardEffect(adventurer, 1, 1, 1, &post, handPos, &coinBonus);
+		if (cardPlay == -1) {
+			result += 1;
+		}
 
 		// Check to see if we failed our test
 		result += adventureCardTest(&pre, &post, player, handCount, deckCount);
