@@ -725,6 +725,7 @@ int feastCardEffect(struct gameState *state, int currentPlayer, int choice1, int
     }
     else{
 
+
       if (DEBUG){
         printf("Deck Count: %d\n", state->handCount[currentPlayer] + state->deckCount[currentPlayer] + state->discardCount[currentPlayer]);
       }
